@@ -1,6 +1,8 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace BethanysPieShop.Models
 {
@@ -25,7 +27,7 @@ namespace BethanysPieShop.Models
         {
             get
             {
-                return _appDbContext.Pies.Include(p => p.Category).Where(p => p.IsPieOfTheWeek);
+                return _appDbContext.Pies.Include(c => c.Category).Where(p => p.IsPieOfTheWeek);
             }
         }
 
